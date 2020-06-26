@@ -70,21 +70,23 @@ class ConfirmedViewController: UIViewController, ChartViewDelegate {
         confiredChartView.marker = marker
         
         
-        queryFeatureLayer()
+        queryFeatureLayer(featureTable:CumulCasesByPlaceAndZipFeatureTable)
     }
     
     private let CumulCasesByPlaceAndZipFeatureTable: AGSServiceFeatureTable = {
         
         // Build URL to the Trails feature server.
-        let featureServiceURL = URL(string: "https://services3.arcgis.com/1iDJcsklY3l3KIjE/arcgis/rest/services/CumulCasesByPlaceAndZip/FeatureServer/0")!
+        let url:String = "https://services3.arcgis.com/1iDJcsklY3l3KIjE/arcgis/rest/services/CumulCasesByPlaceAndZip/FeatureServer/0"
+        //let url:String = "https://services3.arcgis.com/1iDJcsklY3l3KIjE/arcgis/rest/services/AC_dates/FeatureServer/0"
+        let featureServiceURL = URL(string: url)!
         
         // Build service feature table for above URL.
         return AGSServiceFeatureTable(url: featureServiceURL)
     }()
     
-    private func queryFeatureLayer() {
+    private func queryFeatureLayer(featureTable:AGSServiceFeatureTable ) {
         
-        CumulCasesByPlaceAndZipFeatureTable.load { [weak self] (error) in
+        featureTable.load { [weak self] (error) in
             
             // Ensure we still have a reference to `self`.
             guard let self = self else { return }
@@ -105,7 +107,7 @@ class ConfirmedViewController: UIViewController, ChartViewDelegate {
             let outFields: AGSQueryFeatureFields = .loadAll
             
             // Query the feature table.
-            self.CumulCasesByPlaceAndZipFeatureTable.queryFeatures(with: queryParameters, queryFeatureFields: outFields) { (result, error) in
+            featureTable.queryFeatures(with: queryParameters, queryFeatureFields: outFields) { (result, error) in
                 
                 // Return early if the query produced an error.
                 if let error = error {
