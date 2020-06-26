@@ -1,0 +1,26 @@
+PODS:
+  - ArcGIS-Runtime-SDK-iOS (100.8)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
+  - TinyConstraints (4.0.1)
+
+DEPENDENCIES:
+  - ArcGIS-Runtime-SDK-iOS
+  - Charts
+  - TinyConstraints
+
+SPEC REPOS:
+  trunk:
+    - ArcGIS-Runtime-SDK-iOS
+    - Charts
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  ArcGIS-Runtime-SDK-iOS: 5cf174db20194ba8e1571d656e1e902205ed8c80
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+
+PODFILE CHECKSUM: a3b130aa6f89ce494be2b46844d21c58f690ca7c
+
+COCOAPODS: 1.9.3
