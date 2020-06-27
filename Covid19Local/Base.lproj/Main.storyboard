@@ -126,36 +126,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ah-wF-4Hg">
-                                <rect key="frame" x="40" y="772" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cumulative" image="stop" catalog="system"/>
-                                <state key="selected" image="second">
-                                    <color key="titleShadowColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="cumulativeButtonDown:" destination="vE7-03-zyn" eventType="touchDown" id="aQh-fB-g84"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sW-0O-R3k">
-                                <rect key="frame" x="187" y="772" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rate" image="stop" catalog="system"/>
-                                <state key="selected" image="second">
-                                    <color key="titleShadowColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="rateButtonDown:" destination="vE7-03-zyn" eventType="touchDown" id="z9a-SQ-Yug"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLn-1h-JHu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="761"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aLn-1h-JHu" firstAttribute="leading" secondItem="2II-iE-egv" secondAttribute="leading" id="h96-fB-lxB"/>
+                            <constraint firstItem="aLn-1h-JHu" firstAttribute="top" secondItem="2II-iE-egv" secondAttribute="top" id="lVu-qK-Zm6"/>
+                            <constraint firstItem="2II-iE-egv" firstAttribute="trailing" secondItem="aLn-1h-JHu" secondAttribute="trailing" id="ycW-fq-zRa"/>
+                            <constraint firstItem="2II-iE-egv" firstAttribute="bottom" secondItem="aLn-1h-JHu" secondAttribute="bottom" constant="8" id="zI3-NW-Vxx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2II-iE-egv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hospital" image="cloud.bolt.fill" catalog="system" id="XGr-0p-1Qw"/>
-                    <connections>
-                        <outlet property="rateButton" destination="2sW-0O-R3k" id="kXP-eJ-jUz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziX-I4-cW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
